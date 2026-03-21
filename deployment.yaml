@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-demo
+  template:
+    metadata:
+      labels:
+        app: aws-demo
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
